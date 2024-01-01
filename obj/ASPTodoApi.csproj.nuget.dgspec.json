@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\BackEnd\\ASPToDoApi\\ASPTodoApi.csproj": {}
+    "D:\\Code\\BackEnd\\ASPToDoApi\\ASPToDOApi.csproj": {}
   },
   "projects": {
-    "D:\\Code\\BackEnd\\ASPToDoApi\\ASPTodoApi.csproj": {
+    "D:\\Code\\BackEnd\\ASPToDoApi\\ASPToDOApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\BackEnd\\ASPToDoApi\\ASPTodoApi.csproj",
-        "projectName": "ASPTodoApi",
-        "projectPath": "D:\\Code\\BackEnd\\ASPToDoApi\\ASPTodoApi.csproj",
+        "projectUniqueName": "D:\\Code\\BackEnd\\ASPToDoApi\\ASPToDOApi.csproj",
+        "projectName": "ASPToDOApi",
+        "projectPath": "D:\\Code\\BackEnd\\ASPToDoApi\\ASPToDOApi.csproj",
         "packagesPath": "C:\\Users\\trank\\.nuget\\packages\\",
         "outputPath": "D:\\Code\\BackEnd\\ASPToDoApi\\obj\\",
         "projectStyle": "PackageReference",
@@ -38,7 +38,15 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.0, )"
             },

@@ -3,3 +3,9 @@
 2024-01-01 14:10:25.237 +07:00 [INF] Application started. Press Ctrl+C to shut down.
 2024-01-01 14:10:25.239 +07:00 [INF] Hosting environment: Development
 2024-01-01 14:10:25.240 +07:00 [INF] Content root path: D:\Code\BackEnd\ASPToDoApi
+2024-01-01 14:25:30.375 +07:00 [INF] Application is shutting down...
+2024-01-01 14:26:12.166 +07:00 [INF] Now listening on: https://localhost:7071
+2024-01-01 14:26:12.291 +07:00 [INF] Now listening on: http://localhost:5248
+2024-01-01 14:26:12.601 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-01 14:26:12.603 +07:00 [INF] Hosting environment: Development
+2024-01-01 14:26:12.605 +07:00 [INF] Content root path: D:\Code\BackEnd\ASPToDoApi
