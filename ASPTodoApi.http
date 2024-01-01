@@ -1,0 +1,6 @@
+@ASPToDOApi_HostAddress = http://localhost:5248
+
+GET {{ASPToDOApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

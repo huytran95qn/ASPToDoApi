@@ -1,0 +1,5 @@
+2024-01-01 14:10:25.194 +07:00 [INF] Now listening on: https://localhost:7071
+2024-01-01 14:10:25.233 +07:00 [INF] Now listening on: http://localhost:5248
+2024-01-01 14:10:25.237 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-01 14:10:25.239 +07:00 [INF] Hosting environment: Development
+2024-01-01 14:10:25.240 +07:00 [INF] Content root path: D:\Code\BackEnd\ASPToDoApi
