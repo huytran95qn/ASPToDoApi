@@ -9,3 +9,13 @@
 2024-01-01 14:26:12.601 +07:00 [INF] Application started. Press Ctrl+C to shut down.
 2024-01-01 14:26:12.603 +07:00 [INF] Hosting environment: Development
 2024-01-01 14:26:12.605 +07:00 [INF] Content root path: D:\Code\BackEnd\ASPToDoApi
+2024-01-01 15:32:08.884 +07:00 [INF] Application is shutting down...
+2024-01-01 16:10:55.441 +07:00 [ERR] Failed executing DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ToDo] (
+    [Uid] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [StartDate] nvarchar(max) NULL,
+    [EndDate] nvarchar(max) NULL,
+    CONSTRAINT [PK_ToDo] PRIMARY KEY ([Uid])
+);

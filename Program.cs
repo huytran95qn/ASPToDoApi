@@ -1,16 +1,16 @@
 using Microsoft.EntityFrameworkCore;
-using ToDO.API.Data;
+using ToDo.API.Data;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Setup entity framework
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ToDoDbContext>(options => {
     options.UseSqlServer(connectionString);
 });
 
-
+// Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

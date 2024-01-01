@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ToDO.API.Data
+namespace ToDo.API.Data
 {
     public class ToDoDbContext: DbContext
     {
         public ToDoDbContext(DbContextOptions options): base(options) {
             
         }
+
+        public DbSet<ToDo> ToDo { get; set; }
     }
 }
