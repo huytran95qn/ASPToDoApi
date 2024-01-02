@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\BackEnd\\ASPToDoApi\\ASPTodoApi.csproj": {}
+    "D:\\Dev\\Self\\Backend\\ASPToDoApi\\ASPTodoApi.csproj": {}
   },
   "projects": {
-    "D:\\Code\\BackEnd\\ASPToDoApi\\ASPTodoApi.csproj": {
+    "D:\\Dev\\Self\\Backend\\ASPToDoApi\\ASPTodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\BackEnd\\ASPToDoApi\\ASPTodoApi.csproj",
+        "projectUniqueName": "D:\\Dev\\Self\\Backend\\ASPToDoApi\\ASPTodoApi.csproj",
         "projectName": "ASPTodoApi",
-        "projectPath": "D:\\Code\\BackEnd\\ASPToDoApi\\ASPTodoApi.csproj",
-        "packagesPath": "C:\\Users\\trank\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\BackEnd\\ASPToDoApi\\obj\\",
+        "projectPath": "D:\\Dev\\Self\\Backend\\ASPToDoApi\\ASPTodoApi.csproj",
+        "packagesPath": "C:\\Users\\huy.trankhac\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\Self\\Backend\\ASPToDoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\trank\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\huy.trankhac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +41,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"

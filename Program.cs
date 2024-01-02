@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ToDo.API.Data;
 using Serilog;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,9 @@ builder.Host.UseSerilog((ctx, lc) =>
     lc.WriteTo.Console()
     .ReadFrom.Configuration(ctx.Configuration)
 );
+
+// Config AutoMapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 

@@ -1,18 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ToDo.API.Data
+namespace ToDo.API.Models.ToDo
 {
-    public class ToDo
+    public class GetToDoDto
     {
-        [Key]
         public Guid Uid { get; set; }
-
         public string Name { get; set; }
-
         public string Description { get; set; }
-
-        public string StartDate { get; set; }
-
-        public string? EndDate { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }
