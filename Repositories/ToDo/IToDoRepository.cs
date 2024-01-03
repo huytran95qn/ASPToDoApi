@@ -9,10 +9,10 @@ namespace ToDo.API.Repository
     }
     public class ToDoRepository : IToDoRepository
     {
-        private readonly DbContext context;
+        private readonly Data.ToDoDbContext context;
         private readonly DbSet<Data.ToDo> dbSet;
 
-        public ToDoRepository(DbContext context)
+        public ToDoRepository(Data.ToDoDbContext context)
         {
             this.context = context;
             dbSet = this.context.Set<Data.ToDo>();

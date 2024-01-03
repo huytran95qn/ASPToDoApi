@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using ToDo.API.Data;
 using Serilog;
+using Base.API.Repository;
+using ToDo.API.Repository;
+using Microsoft.AspNetCore.Identity;
+using User.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,11 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ToDoDbContext>(options => {
     options.UseSqlServer(connectionString);
 });
+
+// 
+builder.Services.AddIdentityCore<ApiUser>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ToDoDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllers();
