@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ToDo.API.Data;
 using Serilog;
-using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 

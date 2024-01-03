@@ -1,11 +1,7 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace ToDo.API.Models.ToDo
 {
-    public class CreateToDoDto
+    public class CreateToDoDto : BaseToDoDto
     {
-        [Required]
-        public string Name { get; set; }
-        public string Description { get; set; }
+
     }
 }

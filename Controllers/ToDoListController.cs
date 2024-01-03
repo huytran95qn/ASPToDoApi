@@ -1,7 +1,9 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ToDo.API.Data;
 using ToDo.API.Models.ToDo;
+using ToDo.API.Repository;
 
 namespace ToDo.API.Controllers
 {
@@ -9,12 +11,12 @@ namespace ToDo.API.Controllers
     [Route("api/[controller]")]
     public class ToDoController: ControllerBase
     {
-        private readonly Data.ToDoDbContext context;
+        private readonly IToDoRepository toDoRepository;
         private readonly IMapper mapper;
 
-        public ToDoController(Data.ToDoDbContext context, IMapper mapper)
+        public ToDoController(ToDoDbContext context, IMapper mapper)
         {
-            this.context = context;
+            toDoRepository = new ToDoRepository(context);
             this.mapper = mapper;
         }
 
@@ -22,7 +24,7 @@ namespace ToDo.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GetToDoDto>>> GetToDoList()
         {
-            var list = await context.ToDo.ToListAsync();
+            var list = await toDoRepository.GetAll();
             return Ok(mapper.Map<List<GetToDoDto>>(list));
         }
 
@@ -30,7 +32,7 @@ namespace ToDo.API.Controllers
         [HttpGet("{uid}")]
         public async Task<ActionResult<GetToDoDto>> GetToDoById(Guid uid)
         {
-            var toDoItem = await context.ToDo.FindAsync(uid);
+            var toDoItem = await toDoRepository.GetById(uid);
             if(toDoItem == null) {
                 return NotFound();
             }
@@ -45,26 +47,23 @@ namespace ToDo.API.Controllers
             data.Uid = Guid.NewGuid();
             data.StartDate = DateTime.UtcNow.ToString();
 
-            context.ToDo.Add(data);
-            await context.SaveChangesAsync();
-
+            await toDoRepository.Add(data);
             return NoContent();
         }
 
         //Put: api/ToDo/{uid}
         [HttpPut("{uid}")]
-        public async Task<IActionResult> UpdateDescription(string uid, UpdateToDoDto updateData) {
-            var toDoItem = await context.ToDo.FindAsync(uid);
-            if(toDoItem == null) {
+        public async Task<IActionResult> PutToDo(Guid uid, UpdateToDoDto updateData) {
+            var item = await toDoRepository.GetById(uid);
+            if(item is null)
+            {
                 return NotFound();
             }
             
             try
             {
-                toDoItem.Name = updateData.Name;
-                toDoItem.Description = updateData.Description;
-                context.Entry(toDoItem).State = EntityState.Modified;
-                await context.SaveChangesAsync();
+                mapper.Map(updateData, item);
+                await toDoRepository.Update(item);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -78,14 +77,15 @@ namespace ToDo.API.Controllers
         [HttpDelete("{uid}")]
         public async Task<IActionResult> DeleteToDo(Guid uid)
         {
-            var toDoItem = await context.ToDo.FindAsync(uid);
-            if(toDoItem == null) {
+            try
+            {
+                await toDoRepository.Delete(uid);
+                return NoContent();
+            }
+            catch (Exception)
+            {
                 return NotFound();
             }
-
-            context.ToDo.Remove(toDoItem);
-            await context.SaveChangesAsync();
-            return NoContent();
         }
     }
 }

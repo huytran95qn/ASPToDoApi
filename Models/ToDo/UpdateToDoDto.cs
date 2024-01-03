@@ -1,11 +1,8 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace ToDo.API.Models.ToDo
 {
 
-    public class UpdateToDoDto
+    public class UpdateToDoDto: BaseToDoDto
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+
     }
 }
